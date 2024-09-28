@@ -11,13 +11,16 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
+
+import org.springframework.hateoas.RepresentationModel;
+
 import jakarta.validation.constraints.*;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "envio")
-public class Envio {
+public class Envio extends RepresentationModel<Envio> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
